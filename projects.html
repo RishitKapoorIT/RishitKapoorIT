@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishit Kapoor | Architectured Projects</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <style>
+        .project-detail-container {
+            max-width: 100% !important;
+            /* Override standard container for full width scroll */
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text) 0%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.04em;
+        }
+
+        /* --- HORIZONTAL GSAP WRAPPERS --- */
+        .pin-container {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .horizontal-scroll-wrapper {
+            display: flex;
+            width: max-content;
+            gap: 15vw;
+            padding: 0 10vw;
+            align-items: center;
+        }
+
+        .project-detail-card {
+            background: var(--card);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 0;
+            /* Clear vertical flow margin */
+            width: 70vw;
+            max-width: 900px;
+            flex-shrink: 0;
+            -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(40px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            /* Entrance state mapped to container later */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dark .project-detail-card {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(138, 43, 226, 0.05) 0%, transparent 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .project-detail-header {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+            padding-bottom: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-detail-header h2 {
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: -0.02em;
+        }
+
+        .repo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--text);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .repo-link:hover {
+            background: rgba(138, 43, 226, 0.8);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.4);
+        }
+
+        .project-detail-content {
+            position: relative;
+            z-index: 1;
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .project-tags {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-tag {
+            background: rgba(138, 43, 226, 0.1);
+            color: var(--text);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            font-family: monospace;
+        }
+
+        .demo-placeholder {
+            margin-top: 30px;
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            border: 1px dashed rgba(138, 43, 226, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        .dark .demo-placeholder {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .demo-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: rgba(138, 43, 226, 0.6);
+        }
+
+
+        /* Card Swap & Split Layout Styles */
+        .project-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media(max-width: 900px) {
+            .project-split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-visual {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-swap-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* Move it up significantly by translating the Y axis higher than center */
+            transform: translate(-50%, -30%);
+            transform-origin: center center;
+            perspective: 900px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swap-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            height: 220px;
+            border-radius: 12px;
+            border: 1px solid rgba(138, 43, 226, 0.6);
+            background: rgba(15, 10, 25, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            transform-style: preserve-3d;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            padding: 25px;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .swap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1), transparent 40%);
+            z-index: 2;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            mix-blend-mode: overlay;
+        }
+
+        .swap-card:hover::before {
+            opacity: 1;
+        }
+
+        .swap-card h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.3rem;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .swap-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body class="dark page-fade-in">
+    <div id="scroll-progress"></div>
+    <div class="ambient-glow"></div>
+    <div id="bg-canvas"></div>
+
+    <nav>
+        <div class="logo">RK.</div>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#projects">Overview</a>
+            <a href="index.html#experience">Experience</a>
+            <button class="toggle-btn" onclick="toggleDark()" id="theme-toggle">Light Mode</button>
+        </div>
+    </nav>
+
+    <div class="project-detail-container">
+        <h1 class="page-title">Technical Deep Dives</h1>
+
+        <!-- GSAP Horizontal Scroll Pin Container -->
+        <div class="pin-container">
+            <div class="horizontal-scroll-wrapper">
+
+                <!-- Project 1 -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>Generative AI Agent Supervisor</h2>
+                        <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank"
+                            rel="noopener noreferrer" class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p>
+                                    A complex multi-agent orchestration system demonstrating advanced capabilities in AI
+                                    collaboration.
+                                    Built utilizing LangChain and LangGraph to architect a dynamic "Supervisor" agent
+                                    that can
+                                    intelligently delegate sub-tasks to specialized worker agents, aggregate their
+                                    output, and
+                                    synthesize a master response.
+                                </p>
+                                <p>
+                                    <strong>Key Features:</strong> State graph routing, autonomous tool usage, loop
+                                    controls,
+                                    and
+                                    contextual memory injection across varying LLM state machines.
+                                </p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">LangChain</span>
+                                <span class="project-tag">LangGraph</span>
+                                <span class="project-tag">GPT-4</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>Supervisor Node</h3>
+                                    <p>Routes tasks intelligently to the most capable worker agent using an LLM-driven
+                                        state
+                                        machine.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Worker Agents</h3>
+                                    <p>Specialized nodes executing explicit Python scripts or API calls autonomously.
+                                    </p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Shared Memory</h3>
+                                    <p>Global context injected into every prompt enabling multi-turn collaboration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>AI-SecGrid</h2>
+                        <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer"
+                            class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p>
+                                    A comprehensive React-based cybersecurity simulation dashboard. AI-SecGrid was
+                                    designed to
+                                    provide a
+                                    centralized hub for tracking, analyzing, and responding to mock theoretical system
+                                    intrusions.
+                                    The application utilizes real-time state management to simulate varying degrees of
+                                    system
+                                    compromise
+                                    and demonstrates how analytic telemetry is mapped into actionable front-end user
+                                    intelligence.
+                                </p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Cybersecurity UI/UX</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>Live Telemetry</h3>
+                                    <p>Mock intrusion alerts mapped in real-time onto an interactive geographical
+                                        layout.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Defense Matrix</h3>
+                                    <p>Simulated counter-measures panel allowing users to instantly block compromised
+                                        IPs.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Action Logs</h3>
+                                    <p>Detailed chronological history of all simulated network events and administrator
+                                        responses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>VizGraph</h2>
+                        <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer"
+                            class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p>
+                                    A JavaScript data visualization engine exploring programmatic graph rendering and
+                                    interactive
+                                    front-end node dynamics.
+                                    This project showcases the ability to map complex abstract data structures onto a 2D
+                                    canvas
+                                    dynamically with physics-driven relationship strings.
+                                </p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">HTML5 Canvas</span>
+                                <span class="project-tag">Data Visualization</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>Physics Engine</h3>
+                                    <p>Custom calculated friction and spring forces to organically place network nodes.
+                                    </p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Interactive Canvas</h3>
+                                    <p>Drag, drop, and inspect nodes natively using HTML5 Canvas API context listeners.
+                                    </p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Data Parsing</h3>
+                                    <p>Dynamic JSON ingestion scripts that instantly render graph nodes across the
+                                        screen.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>Blogify</h2>
+                        <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer"
+                            class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p>
+                                    A full-stack JavaScript blogging platform designed for seamless content management
+                                    and
+                                    reader
+                                    engagement.
+                                    Blogify focuses heavily on modular component construction, allowing for dynamically
+                                    generated pages,
+                                    database indexing, and user-friendly authoring tools.
+                                </p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Full-Stack</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>CMS Editor</h3>
+                                    <p>A rich text editor integrated seamlessly allowing for rapid blog post creation.
+                                    </p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Dynamic Routes</h3>
+                                    <p>Server-side generated pages pulling directly from a custom NoSQL database
+                                        implementation.
+                                    </p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Auth System</h3>
+                                    <p>Encrypted user authentication restricting content creation to verified
+                                        administrators.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Horizontal Scroll Wrapper -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact & Footer -->
+    <section id="contact" style="padding: 100px 20px;">
+        <h2 class="page-title" style="margin-top: 0; margin-bottom: 40px; font-size: 2.5rem;">Contact</h2>
+        <div class="contact">
+            <a href="mailto:rishitkpr@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rishit-kapoor-33b2b81b0/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/RishitKapoorIT" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/rishitkapoor_28?igsh=bmlzMG9rcGZobXJl" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Rishit Kapoor. Built with intention.
+    </footer>
+
+    <!-- Three.js for Background Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <script src="script.js?v=3"></script>
+
+    <!-- GSAP & Plugins for Card Swap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Entry Animation & Horizontal GSAP Routing -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const horizontalWrapper = document.querySelector('.horizontal-scroll-wrapper');
+            const sections = gsap.utils.toArray('.project-detail-card');
+
+            // 1. Master Horizontal Scroll Pin (Using actual ScrollWidth bounds)
+            const horizontalScrollTween = gsap.to(horizontalWrapper, {
+                x: () => -(horizontalWrapper.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".pin-container",
+                    pin: true,
+                    scrub: 1, // Smooth scrubbing, takes 1 second to catch up
+                    end: () => "+=" + (horizontalWrapper.scrollWidth - window.innerWidth),
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // 2. Vanilla JS GSAP Card Swap Implementation
+            function initCardSwap(containerNode, settings = {}) {
+                const {
+                    cardDistance = 60,
+                    verticalDistance = 70,
+                    delay = 5000,
+                    pauseOnHover = false,
+                    skewAmount = 6,
+                    easing = 'elastic.out(0.6,0.9)',
+                    durDrop = 2,
+                    durMove = 2,
+                    durReturn = 2,
+                    promoteOverlap = 0.9,
+                    returnDelay = 0.05
+                } = settings;
+
+                const childArr = Array.from(containerNode.querySelectorAll('.swap-card'));
+                if (childArr.length === 0) return;
+
+                let order = Array.from({ length: childArr.length }, (_, i) => i);
+                let tlRef = null;
+                let intervalRef = null;
+
+                const makeSlot = (i, distX, distY, total) => ({
+                    x: i * distX,
+                    y: -i * distY,
+                    z: -i * distX * 1.5,
+                    zIndex: total - i
+                });
+
+                const placeNow = (el, slot, skew) => {
+                    gsap.set(el, {
+                        x: slot.x,
+                        y: slot.y,
+                        z: slot.z,
+                        xPercent: -50,
+                        yPercent: -50,
+                        skewY: skew,
+                        transformOrigin: 'center center',
+                        zIndex: slot.zIndex,
+                        force3D: true
+                    });
+                };
+
+                // Register ScrollTrigger globally once
+                if (typeof ScrollTrigger !== "undefined") gsap.registerPlugin(ScrollTrigger);
+
+                // Initialize positions with ScrollTrigger Cinematic Reveal linked to Horizontal scrub
+                const entranceTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: containerNode.closest('.project-detail-card'), // Trigger off the parent card entering
+                        containerAnimation: horizontalScrollTween, // Bind to the master horizontal tween!
+                        start: "left 75%", // Triggers when the card's left edge hits 75% of the viewport width
+                    }
+                });
+
+                childArr.forEach((el, i) => {
+                    const finalSlot = makeSlot(i, cardDistance, verticalDistance, childArr.length);
+
+                    // Pre-animation state (deep Z, rotated, transparent)
+                    gsap.set(el, {
+                        x: finalSlot.x + 400,
+                        y: finalSlot.y + 200,
+                        z: finalSlot.z - 1000,
+                        rotationY: 45,
+                        rotationX: 20,
+                        xPercent: -50,
+                        yPercent: -50,
+                        skewY: skewAmount,
+                        transformOrigin: 'center center',
+                        zIndex: finalSlot.zIndex,
+                        opacity: 0,
+                        force3D: true
+                    });
+
+                    // Holographic Mouse Tracker
+                    el.addEventListener('mousemove', (e) => {
+                        const rect = el.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        el.style.setProperty('--x', `${x}px`);
+                        el.style.setProperty('--y', `${y}px`);
+                    });
+
+                    // Click Interface for Interacting with Background Cards
+                    el.addEventListener('click', () => {
+                        const clickedIdx = order.indexOf(i);
+                        if (clickedIdx === 0) return; // Already front card
+
+                        // Interrupt automatic timeline
+                        if (tlRef) tlRef.kill();
+                        clearInterval(intervalRef);
+
+                        // Extract clicked card and move it to order[0]
+                        order.splice(clickedIdx, 1);
+                        order.unshift(i);
+
+                        // Swiftly animate all cards to their new sorting slots
+                        order.forEach((cardId, slotIndex) => {
+                            const c = childArr[cardId];
+                            const s = makeSlot(slotIndex, cardDistance, verticalDistance, childArr.length);
+                            gsap.to(c, {
+                                x: s.x,
+                                y: s.y,
+                                z: s.z,
+                                zIndex: s.zIndex,
+                                duration: 0.8,
+                                ease: "power3.out"
+                            });
+                        });
+
+                        // Resume the automatic loop
+                        intervalRef = setInterval(swap, delay);
+                    });
+
+                    // Add to Cinematic entrance timeline
+                    entranceTl.to(el, {
+                        x: finalSlot.x,
+                        y: finalSlot.y,
+                        z: finalSlot.z,
+                        rotationY: 0,
+                        rotationX: 0,
+                        opacity: 1,
+                        duration: 1.2,
+                        ease: "power3.out"
+                    }, i * 0.15);
+                });
+
+                const swap = () => {
+                    if (order.length < 2) return;
+
+                    const front = order[0];
+                    const rest = order.slice(1);
+                    const elFront = childArr[front];
+
+                    const tl = gsap.timeline();
+                    tlRef = tl;
+
+                    // Drop front card down
+                    tl.to(elFront, {
+                        y: '+=500',
+                        duration: durDrop,
+                        ease: easing
+                    });
+
+                    // Start promoting the rest of the cards
+                    tl.addLabel('promote', `-=${durDrop * promoteOverlap}`);
+
+                    rest.forEach((idx, i) => {
+                        const el = childArr[idx];
+                        const slot = makeSlot(i, cardDistance, verticalDistance, childArr.length);
+                        tl.set(el, { zIndex: slot.zIndex }, 'promote');
+                        tl.to(
+                            el,
+                            {
+                                x: slot.x,
+                                y: slot.y,
+                                z: slot.z,
+                                duration: durMove,
+                                ease: easing
+                            },
+                            `promote+=${i * 0.15}`
+                        );
+                    });
+
+                    // Return original front card to the back position
+                    const backSlot = makeSlot(childArr.length - 1, cardDistance, verticalDistance, childArr.length);
+                    tl.addLabel('return', `promote+=${durMove * returnDelay}`);
+
+                    tl.call(() => {
+                        gsap.set(elFront, { zIndex: backSlot.zIndex });
+                    }, null, 'return');
+
+                    tl.to(
+                        elFront,
+                        {
+                            x: backSlot.x,
+                            y: backSlot.y,
+                            z: backSlot.z,
+                            duration: durReturn,
+                            ease: easing
+                        },
+                        'return'
+                    );
+
+                    // Update order array
+                    tl.call(() => {
+                        order = [...rest, front];
+                    });
+                };
+
+                // Only start automatic looping interval after ScrollTrigger Entrance completes
+                entranceTl.call(() => {
+                    intervalRef = setInterval(swap, delay);
+                });
+
+                if (pauseOnHover) {
+                    const pause = () => {
+                        if (tlRef) tlRef.pause();
+                        clearInterval(intervalRef);
+                    };
+                    const resume = () => {
+                        if (tlRef) tlRef.play();
+                        // Prevent multi-firing intervals if hovered multiple times
+                        clearInterval(intervalRef);
+                        intervalRef = setInterval(swap, delay);
+                    };
+                    containerNode.addEventListener('mouseenter', pause);
+                    containerNode.addEventListener('mouseleave', resume);
+                }
+            }
+
+            // Initialize all card swap components on the page
+            document.querySelectorAll('.card-swap-container').forEach(container => {
+                initCardSwap(container, {
+                    delay: 4500, // Speed up the animation tick slightly
+                    pauseOnHover: true // Improve UX allowing user to read text without it swapping away
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishit Kapoor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body class="dark">
+    <div id="scroll-progress"></div>
+    <div class="ambient-glow"></div>
+    <div id="bg-canvas"></div>
+
+    <nav>
+        <div class="logo"><strong>Rishit Kapoor</strong></div>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="#experience" onclick="toggleMenu()">Experience</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
+            <button class="toggle-btn" onclick="toggleDark()" id="theme-toggle">Light Mode</button>
+        </div>
+    </nav>
+
+    <div class="hero" id="home">
+        <div id="cubes-container"></div>
+        <h1><span id="typing-text" class="text-type"></span></h1>
+        <p>
+            B.Tech IT Student | Cybersecurity Researcher | Full-Stack Developer |
+            Technical Secretary & Placement Head at LearnIT.
+        </p>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>
+            Third-year IT student focused on Cybersecurity, AI systems, and scalable web applications.
+            Research presented at ACL 2025 (Vienna). Builder of intelligent multi-agent systems and full-stack
+            platforms.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Selected Projects</h2>
+
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ai">AI / ML</button>
+            <button class="filter-btn" data-filter="sys">Systems & C/C++</button>
+        </div>
+
+        <div class="projects-grid">
+            <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank"
+                rel="noopener noreferrer" class="card-link">
+                <div class="card" data-category="ai">
+                    <h3>Generative AI Agent Supervisor Project</h3>
+                    <p>Demonstrates advanced design patterns in LangChain and LangGraph to build a supervisor
+                        orchestration system with dynamic agent coordination.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer"
+                class="card-link">
+                <div class="card" data-category="sys">
+                    <h3>AI-SecGrid</h3>
+                    <p>React-based cybersecurity simulation dashboard for analyzing and responding to mock theoretical
+                        system intrusions.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer"
+                class="card-link">
+                <div class="card" data-category="all">
+                    <h3>VizGraph</h3>
+                    <p>JavaScript data visualization project exploring graph rendering and interactive front-end node
+                        dynamics.</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer"
+                class="card-link">
+                <div class="card" data-category="all">
+                    <h3>Blogify</h3>
+                    <p>Full-stack JavaScript blogging platform with content management features.</p>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <a href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank" rel="noopener noreferrer"
+            class="card-link">
+            <div class="card">
+                <h3>Research Assistant – Manipal University Jaipur</h3>
+                <p>Published work on emotional intelligence simulation in LLMs. Presented at ACL 2025.</p>
+            </div>
+        </a>
+
+        <div class="card">
+            <h3>Web Developer Intern – Zidio Development</h3>
+            <p>Worked on scalable web apps, APIs, optimization and deployment.</p>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <div class="skills">
+            <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">Python</a>
+            <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer">C/C++</a>
+            <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer">Java</a>
+            <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">ReactJS</a>
+            <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">Node.js</a>
+            <a href="https://en.wikipedia.org/wiki/Computer_security" target="_blank"
+                rel="noopener noreferrer">Cybersecurity</a>
+            <a href="https://www.kali.org/" target="_blank" rel="noopener noreferrer">Kali Linux</a>
+            <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">MySQL</a>
+            <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">Docker</a>
+            <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact">
+            <a href="mailto:rishitkpr@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rishit-kapoor-33b2b81b0/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/RishitKapoorIT" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/rishitkapoor_28?igsh=bmlzMG9rcGZobXJl" target="_blank"
+                rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Spotify Now Playing Widget -->
+    <div class="spotify-widget" id="spotify-widget" onclick="toggleSpotifyPanel()">
+        <div class="spotify-inner">
+            <div class="album-art">
+                <!-- Using a placeholder gradient for the album art initially -->
+                <div class="vinyl-record">
+                    <div class="vinyl-center"></div>
+                </div>
+            </div>
+            <div class="track-info">
+                <span class="now-playing-label">Now Playing</span>
+                <span class="track-name">Midnight City</span>
+                <span class="artist-name">M83</span>
+            </div>
+            <div class="equalizer">
+                <span class="bar bar-1"></span>
+                <span class="bar bar-2"></span>
+                <span class="bar bar-3"></span>
+                <span class="bar bar-4"></span>
+            </div>
+            <i class="fab fa-spotify spotify-icon"></i>
+        </div>
+    </div>
+
+    <!-- Spotify Expanded Panel (Hidden by default) -->
+    <div class="spotify-panel" id="spotify-panel">
+        <div class="panel-header">
+            <h3><i class="fab fa-spotify"></i> My Frequency</h3>
+            <button class="close-panel" onclick="toggleSpotifyPanel()" aria-label="Close Spotify Panel"
+                title="Close Spotify Panel"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="panel-content">
+            <!-- Embed Spotify Playlists Here -->
+            <iframe class="spotify-iframe" title="Spotify Playlist Player"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0"
+                width="100%" height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Rishit Kapoor. Built with intention.
+    </footer>
+
+    <!-- Scroll Spy Navigation -->
+    <div class="scroll-nav">
+        <a href="#home" class="scroll-dot active" data-target="home">
+            <span class="scroll-label">Home</span>
+            <div class="dot"></div>
+        </a>
+        <a href="#about" class="scroll-dot" data-target="about">
+            <span class="scroll-label">About</span>
+            <div class="dot"></div>
+        </a>
+        <a href="#projects" class="scroll-dot" data-target="projects">
+            <span class="scroll-label">Projects</span>
+            <div class="dot"></div>
+        </a>
+        <a href="#experience" class="scroll-dot" data-target="experience">
+            <span class="scroll-label">Experience</span>
+            <div class="dot"></div>
+        </a>
+        <a href="#contact" class="scroll-dot" data-target="contact">
+            <span class="scroll-label">Contact</span>
+            <div class="dot"></div>
+        </a>
+    </div>
+
+    <!-- Three.js for Background Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <!-- GSAP for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js?v=2"></script>
+
+</body>
+
+</html>
