@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rishit Kapoor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body class="dark">
+    <div id="scroll-progress"></div>
+    <div class="ambient-glow"></div>
+    <div id="bg-canvas"></div>
+
+    <nav>
+        <div class="logo"><strong><a href="index.html" style="text-decoration: none; color: inherit;">Rishit Kapoor</a></strong></div>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="index.html#about" onclick="toggleMenu()">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="index.html#experience" onclick="toggleMenu()">Experience</a>
+            <a href="contact.html" onclick="toggleMenu()">Contact</a>
+            <button class="toggle-btn" onclick="toggleDark()" id="theme-toggle">Light Mode</button>
+        </div>
+    </nav>
+
+    <main class="contact-page-wrapper">
+        <div class="contact-header">
+            <span class="small-title">Get in touch</span>
+            <h1 class="big-title">CONTACT US</h1>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-left">
+                <h2>We are awwwards and we are here to serve! How can we help you?</h2>
+                <p>If you have any questions about your submission, directory, billing, courses or anything else awwwards related, we're here to help!</p>
+            </div>
+            
+            <div class="contact-right">
+                <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent!');">
+                    <div class="form-group">
+                        <label for="name">NAME (*)</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-MAIL (*)</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">WEBSITE</label>
+                        <input type="url" id="website" name="website" placeholder="Add a URI with http://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsup">WHAT'S UP? (*)</label>
+                        <div class="custom-select-wrapper">
+                            <select id="whatsup" name="whatsup" required>
+                                <option value="" disabled selected>-- Select an option --</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Support</option>
+                                <option value="billing">Billing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">COMMENT (*)</label>
+                        <textarea id="comment" name="comment" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I have read and accepted the <strong><a href="#">Terms and Conditions</a></strong> and <strong><a href="#">Privacy Policy</a></strong></label>
+                    </div>
+
+                    <div class="recaptcha-text">
+                        This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+                    </div>
+
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            © 2026 Rishit Kapoor. Built with intention.
+            <div class="footer-links">
+                <a href="#">Cookies Policy</a>
+                <a href="#">Legal Terms</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-social">
+                <span>Connect:</span>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+                <a href="#">TikTok</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <button class="back-to-top" onclick="window.scrollTo(0,0)" aria-label="Back to top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+        </div>
+    </footer>
+
+    <!-- Three.js for Background Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <!-- GSAP for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>
