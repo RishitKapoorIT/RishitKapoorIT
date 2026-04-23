@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Typing Effect for Main Title
     const typingElement = document.getElementById('typing-text');
     if (typingElement) {
-        new TextType(typingElement, ["Building intelligent systems for the future."], {
+        new TextType(typingElement, ["Freelance Full-Stack Developer."], {
             typingSpeed: 50,
             deletingSpeed: 30,
             pauseDuration: 2000,

@@ -36,12 +36,58 @@
 
     <div class="hero" id="home">
         <div id="cubes-container"></div>
+        
+
+
         <h1><span id="typing-text" class="text-type"></span></h1>
-        <p>
-            B.Tech IT Student | Cybersecurity Researcher | Full-Stack Developer |
-            Technical Secretary & Placement Head at LearnIT.
+        
+        <p style="max-width: 600px; line-height: 1.6; margin: 0; text-align: left;">
+            I build fast, scalable full-stack web applications using React and Node.js from idea to deployment.
         </p>
+
+        <div class="hero-actions" style="margin-top: 35px; display:flex; gap:15px; justify-content:flex-start; position:relative; z-index:2;">
+            <a href="CV/Freelance_Resume.html?print=true" target="_blank" class="download-btn" style="padding: 12px 24px; background: rgba(138,43,226, 0.8); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s; display:inline-flex; align-items:center; gap:8px;">
+                <i class="fas fa-file-download"></i> Download Resume
+            </a>
+            <a href="contact.html" class="contact-btn" style="padding: 12px 24px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.3s;">
+                Let's Talk
+            </a>
+        </div>
     </div>
+
+    <section id="services" style="margin-top: 60px;">
+        <h2>Services</h2>
+        <div class="services-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top:40px;">
+            <div class="service-card card" style="text-align: left; padding: 30px;">
+                <i class="fas fa-layer-group" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
+                <h3 style="margin-bottom:10px; font-size:1.3rem;">Custom Web Applications</h3>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Building complete, end-to-end web apps from intuitive frontend UIs to robust backend systems.</p>
+            </div>
+            <div class="service-card card" style="text-align: left; padding: 30px;">
+                <i class="fas fa-server" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
+                <h3 style="margin-bottom:10px; font-size:1.3rem;">REST API Development</h3>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Designing and building clean, secure, and scalable Node.js/Express APIs for any platform.</p>
+            </div>
+            <div class="service-card card" style="text-align: left; padding: 30px;">
+                <i class="fas fa-desktop" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
+                <h3 style="margin-bottom:10px; font-size:1.3rem;">UI Development</h3>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Crafting highly engaging, React-based animated interfaces that scale flawlessly across all devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACL Publication Banner -->
+    <section id="publication" style="padding: 0; margin-top: 60px; margin-bottom: 60px;">
+        <a href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <div class="card publication-banner" style="display:flex; align-items:center; gap:20px; padding: 25px 40px; background: linear-gradient(90deg, rgba(138,43,226,0.1) 0%, rgba(138,43,226,0.02) 100%); border-left: 4px solid #8a2be2; text-align:left;">
+                <i class="fas fa-award" style="font-size:2.5rem; color: #8a2be2;"></i>
+                <div>
+                    <h3 style="margin:0 0 5px 0; color: #fff; font-size: 1.2rem;">Published Researcher</h3>
+                    <p style="margin:0; color:var(--muted); font-size: 0.95rem;">Research on emotional intelligence in LLMs published and presented at <strong>ACL 2025, Vienna</strong>.</p>
+                </div>
+            </div>
+        </a>
+    </section>
 
     <section id="about">
         <h2>About</h2>

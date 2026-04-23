@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishit Kapoor - Freelance Full-Stack Developer</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .page {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 2.5rem;
+            color: #111;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0 0 15px 0;
+        }
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.95rem;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: #222;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .item {
+            margin-bottom: 20px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .item-meta {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        .item ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .item li {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                display: block;
+            }
+            .page {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <h1>Rishit Kapoor</h1>
+            <p class="subtitle">Freelance Full-Stack Developer & Technical Architect</p>
+            <div class="contact-info">
+                <a href="mailto:rishitkpr@gmail.com">rishitkpr@gmail.com</a>
+                <a href="https://www.linkedin.com/in/rishit-kapoor-33b2b81b0/">LinkedIn: rishit-kapoor</a>
+                <a href="https://github.com/RishitKapoorIT">GitHub: RishitKapoorIT</a>
+                <a href="../contact.html">Contact Form</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p style="line-height:1.6; font-size:0.95rem; margin-top:0;">
+                Detail-oriented full-stack developer specializing in building scalable web applications using React and Node.js. 
+                Experienced in leading end-to-end project lifecycles—from initial architecture and database schema design to frontend UI/UX and deployment.
+                Available for freelance engagements requiring highly performant, secure, and modern digital experiences.
+            </p>
+        </section>
+
+        <section>
+            <h2>Freelance & Contracting Services</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Custom Web Application Development</span>
+                </div>
+                <ul>
+                    <li>Develop responsive, interactive UIs using React, Next.js, and modern CSS frameworks.</li>
+                    <li>Architect headless backends using Node.js, Express, and REST APIs.</li>
+                    <li>Design schemas and optimize queries for NoSQL (MongoDB) and SQL databases.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">UI/UX & Interactive Visualization Engineering</span>
+                </div>
+                <ul>
+                    <li>Implement high-performance 2D Canvas visualizations and custom physics engines.</li>
+                    <li>Integrate advanced state-mapping tools like Redux for real-time dashboard telemetry.</li>
+                    <li>Design sophisticated GSAP animation timelines for premium web experiences.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Technical Projects</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Blogify - Full-Stack Headless CMS Platform</span>
+                    <span class="item-meta">React, Node.js, Express, NoSQL</span>
+                </div>
+                <ul>
+                    <li>Engineered a highly-scalable, custom-built React CMS dashboard to decouple frontend content generation from backend administration.</li>
+                    <li>Implemented secure JWT authentication and role-based access control protecting raw REST API endpoints.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">AI-SecGrid - Cybersecurity Intelligence Dashboard</span>
+                    <span class="item-meta">JavaScript, React, WebSocket Simulation</span>
+                </div>
+                <ul>
+                    <li>Developed an interactive real-time tracking hub rendering simulated geographic mock data and intrusion alerts.</li>
+                    <li>Optimized component re-rendering strategies to handle high-velocity asynchronous intelligence telemetry.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Generative AI Agent Supervisor</span>
+                    <span class="item-meta">Python, LangChain, API Integration</span>
+                </div>
+                <ul>
+                    <li>Designed an autonomous multi-node orchestration system capable of executing state-machine driven Python and API workloads.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Proficiencies</h2>
+            <div class="skills-container">
+                <span class="skill-tag">React / ReactJS</span>
+                <span class="skill-tag">Node.js / Express</span>
+                <span class="skill-tag">JavaScript / HTML5 / CSS3</span>
+                <span class="skill-tag">Python & C/C++</span>
+                <span class="skill-tag">MySQL / MongoDB</span>
+                <span class="skill-tag">Docker / Git</span>
+                <span class="skill-tag">REST API Architecture</span>
+                <span class="skill-tag">GSAP / Framer Motion</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Academic Footprint</h2>
+            <div class="item" style="margin-bottom:0;">
+                <div class="item-header">
+                    <span class="item-title">Published Researcher - ACL 2025</span>
+                    <span class="item-meta">Vienna, Austria</span>
+                </div>
+                <ul>
+                    <li>Presented research analyzing and simulating emotional intelligence capabilities within Large Language Models.</li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Trigger auto-print dialog if ?print=true parameter exists
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('print')) {
+            window.print();
+        }
+    </script>
+</body>
+</html>

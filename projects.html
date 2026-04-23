@@ -315,33 +315,100 @@
         <div class="pin-container">
             <div class="horizontal-scroll-wrapper">
 
-                <!-- Project 1 -->
+                <!-- Project 1: Blogify -->
                 <div class="project-detail-card slide-up-trigger">
                     <div class="project-detail-header">
-                        <h2>Generative AI Agent Supervisor</h2>
-                        <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank"
-                            rel="noopener noreferrer" class="repo-link">
+                        <h2>Blogify</h2>
+                        <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer" class="repo-link">
                             <i class="fab fa-github"></i> View Source
                         </a>
                     </div>
                     <div class="project-split">
                         <div class="project-info">
                             <div class="project-detail-content">
-                                <p>
-                                    A complex multi-agent orchestration system demonstrating advanced capabilities in AI
-                                    collaboration.
-                                    Built utilizing LangChain and LangGraph to architect a dynamic "Supervisor" agent
-                                    that can
-                                    intelligently delegate sub-tasks to specialized worker agents, aggregate their
-                                    output, and
-                                    synthesize a master response.
-                                </p>
-                                <p>
-                                    <strong>Key Features:</strong> State graph routing, autonomous tool usage, loop
-                                    controls,
-                                    and
-                                    contextual memory injection across varying LLM state machines.
-                                </p>
+                                <p><strong>Problem:</strong> Standard CMS platforms are often bloated and slow, requiring massive monolithic backends to serve simple content.</p>
+                                <p><strong>What I Built:</strong> A full-stack, decoupled blogging platform featuring a custom-built React CMS dashboard, secure JWT user authentication, and a headless REST API backend.</p>
+                                <p><strong>Result:</strong> A production-ready, highly-scalable platform capable of autonomously generating static SEO-friendly pages while restricting raw endpoints via custom middleware.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Full-Stack</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>CMS Editor</h3>
+                                    <p>A rich text editor integrated seamlessly allowing for rapid blog post creation.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Dynamic Routes</h3>
+                                    <p>Server-side generated pages pulling directly from a custom NoSQL database implementation.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Auth System</h3>
+                                    <p>Encrypted user authentication restricting content creation to verified administrators.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI-SecGrid -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>AI-SecGrid</h2>
+                        <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer" class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p><strong>Problem:</strong> Cybersecurity intelligence requires digesting massive amounts of raw log data in split seconds to respond to threats.</p>
+                                <p><strong>What I Built:</strong> A centralized React dashboard mapping simulated cyber intrusions to an interactive geographic UI for real-time threat intelligence.</p>
+                                <p><strong>Result:</strong> An immersive, command-center UI capable of digesting mock asynchronous WebSocket streams and mapping high-velocity telemetry onto actionable front-end components.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Cybersecurity UI/UX</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="card-swap-container">
+                                <div class="swap-card">
+                                    <h3>Live Telemetry</h3>
+                                    <p>Mock intrusion alerts mapped in real-time onto an interactive geographical layout.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Defense Matrix</h3>
+                                    <p>Simulated counter-measures panel allowing users to instantly block compromised IPs.</p>
+                                </div>
+                                <div class="swap-card">
+                                    <h3>Action Logs</h3>
+                                    <p>Detailed chronological history of all simulated network events and administrator responses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: AI Agent Supervisor -->
+                <div class="project-detail-card slide-up-trigger">
+                    <div class="project-detail-header">
+                        <h2>Generative AI Agent Supervisor</h2>
+                        <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank" rel="noopener noreferrer" class="repo-link">
+                            <i class="fab fa-github"></i> View Source
+                        </a>
+                    </div>
+                    <div class="project-split">
+                        <div class="project-info">
+                            <div class="project-detail-content">
+                                <p><strong>Problem:</strong> Single-prompt LLMs fail at massive multi-step logical workloads that require external API access and tool routing.</p>
+                                <p><strong>What I Built:</strong> A dynamic multi-agent system utilizing LangChain to autonomously route and synthesize outputs from specialized Python worker scripts.</p>
+                                <p><strong>Result:</strong> Successfully engineered an autonomous "Supervisor" node traversing state graphs, validating parallel tool executions, and synthesizing modular results without human intervention.</p>
                             </div>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
@@ -354,14 +421,11 @@
                             <div class="card-swap-container">
                                 <div class="swap-card">
                                     <h3>Supervisor Node</h3>
-                                    <p>Routes tasks intelligently to the most capable worker agent using an LLM-driven
-                                        state
-                                        machine.</p>
+                                    <p>Routes tasks intelligently to the most capable worker agent using an LLM-driven state machine.</p>
                                 </div>
                                 <div class="swap-card">
                                     <h3>Worker Agents</h3>
-                                    <p>Specialized nodes executing explicit Python scripts or API calls autonomously.
-                                    </p>
+                                    <p>Specialized nodes executing explicit Python scripts or API calls autonomously.</p>
                                 </div>
                                 <div class="swap-card">
                                     <h3>Shared Memory</h3>
@@ -372,79 +436,20 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-detail-card slide-up-trigger">
-                    <div class="project-detail-header">
-                        <h2>AI-SecGrid</h2>
-                        <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer"
-                            class="repo-link">
-                            <i class="fab fa-github"></i> View Source
-                        </a>
-                    </div>
-                    <div class="project-split">
-                        <div class="project-info">
-                            <div class="project-detail-content">
-                                <p>
-                                    A comprehensive React-based cybersecurity simulation dashboard. AI-SecGrid was
-                                    designed to
-                                    provide a
-                                    centralized hub for tracking, analyzing, and responding to mock theoretical system
-                                    intrusions.
-                                    The application utilizes real-time state management to simulate varying degrees of
-                                    system
-                                    compromise
-                                    and demonstrates how analytic telemetry is mapped into actionable front-end user
-                                    intelligence.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Cybersecurity UI/UX</span>
-                            </div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="card-swap-container">
-                                <div class="swap-card">
-                                    <h3>Live Telemetry</h3>
-                                    <p>Mock intrusion alerts mapped in real-time onto an interactive geographical
-                                        layout.</p>
-                                </div>
-                                <div class="swap-card">
-                                    <h3>Defense Matrix</h3>
-                                    <p>Simulated counter-measures panel allowing users to instantly block compromised
-                                        IPs.</p>
-                                </div>
-                                <div class="swap-card">
-                                    <h3>Action Logs</h3>
-                                    <p>Detailed chronological history of all simulated network events and administrator
-                                        responses.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
+                <!-- Project 4: VizGraph -->
                 <div class="project-detail-card slide-up-trigger">
                     <div class="project-detail-header">
                         <h2>VizGraph</h2>
-                        <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer"
-                            class="repo-link">
+                        <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer" class="repo-link">
                             <i class="fab fa-github"></i> View Source
                         </a>
                     </div>
                     <div class="project-split">
                         <div class="project-info">
                             <div class="project-detail-content">
-                                <p>
-                                    A JavaScript data visualization engine exploring programmatic graph rendering and
-                                    interactive
-                                    front-end node dynamics.
-                                    This project showcases the ability to map complex abstract data structures onto a 2D
-                                    canvas
-                                    dynamically with physics-driven relationship strings.
-                                </p>
+                                <p><strong>Problem:</strong> Rendering complex thousands-node relationship hierarchies causes significant UI lag when updating standard DOM elements.</p>
+                                <p><strong>What I Built:</strong> Programmed a high-performance JavaScript physics engine capable of dynamically rendering abstract data structures natively on the HTML5 Canvas.</p>
+                                <p><strong>Result:</strong> Achieved fluid 60fps graph interactivity leveraging custom mathematical friction, spring forces, and direct context rendering to bypass heavy framework bottlenecks.</p>
                             </div>
                             <div class="project-tags">
                                 <span class="project-tag">JavaScript</span>
@@ -456,70 +461,15 @@
                             <div class="card-swap-container">
                                 <div class="swap-card">
                                     <h3>Physics Engine</h3>
-                                    <p>Custom calculated friction and spring forces to organically place network nodes.
-                                    </p>
+                                    <p>Custom calculated friction and spring forces to organically place network nodes.</p>
                                 </div>
                                 <div class="swap-card">
                                     <h3>Interactive Canvas</h3>
-                                    <p>Drag, drop, and inspect nodes natively using HTML5 Canvas API context listeners.
-                                    </p>
+                                    <p>Drag, drop, and inspect nodes natively using HTML5 Canvas API context listeners.</p>
                                 </div>
                                 <div class="swap-card">
                                     <h3>Data Parsing</h3>
-                                    <p>Dynamic JSON ingestion scripts that instantly render graph nodes across the
-                                        screen.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-detail-card slide-up-trigger">
-                    <div class="project-detail-header">
-                        <h2>Blogify</h2>
-                        <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer"
-                            class="repo-link">
-                            <i class="fab fa-github"></i> View Source
-                        </a>
-                    </div>
-                    <div class="project-split">
-                        <div class="project-info">
-                            <div class="project-detail-content">
-                                <p>
-                                    A full-stack JavaScript blogging platform designed for seamless content management
-                                    and
-                                    reader
-                                    engagement.
-                                    Blogify focuses heavily on modular component construction, allowing for dynamically
-                                    generated pages,
-                                    database indexing, and user-friendly authoring tools.
-                                </p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">Full-Stack</span>
-                            </div>
-                        </div>
-                        <div class="project-visual">
-                            <div class="card-swap-container">
-                                <div class="swap-card">
-                                    <h3>CMS Editor</h3>
-                                    <p>A rich text editor integrated seamlessly allowing for rapid blog post creation.
-                                    </p>
-                                </div>
-                                <div class="swap-card">
-                                    <h3>Dynamic Routes</h3>
-                                    <p>Server-side generated pages pulling directly from a custom NoSQL database
-                                        implementation.
-                                    </p>
-                                </div>
-                                <div class="swap-card">
-                                    <h3>Auth System</h3>
-                                    <p>Encrypted user authentication restricting content creation to verified
-                                        administrators.
-                                    </p>
+                                    <p>Dynamic JSON ingestion scripts that instantly render graph nodes across the screen.</p>
                                 </div>
                             </div>
                         </div>
