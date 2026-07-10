@@ -995,3 +995,133 @@ function toggleSpotifyPanel() {
         panel.classList.toggle('active');
     }
 }
+
+// =========================================
+// LLM SLIDER — Research Spotlight
+// =========================================
+const llmSlider = document.getElementById('llm-slider');
+const llmText   = document.getElementById('llm-text');
+const llmMode   = document.getElementById('llm-mode');
+const llmLabel  = document.getElementById('llm-mode');
+
+const llmResponses = [
+    {
+        mode: 'Analytical Mode',
+        color: '#5227ff',
+        text: 'The probability of project success correlates with a structured timeline, defined KPIs, and iterative sprint reviews. Risk mitigation is essential.'
+    },
+    {
+        mode: 'Balanced Mode',
+        color: '#8a2be2',
+        text: "I can see you're working hard on this. Let's build a clear plan together — setting realistic milestones will help keep you both on track and motivated."
+    },
+    {
+        mode: 'Emotional Mode',
+        color: '#e05fc4',
+        text: "I believe in you. Every project has its tough moments, but your passion is what will carry it through. Take it one step at a time — you've got this. 💜"
+    }
+];
+
+if (llmSlider) {
+    llmSlider.addEventListener('input', () => {
+        const val = parseInt(llmSlider.value);
+        let idx = 0;
+        if (val > 66) idx = 2;
+        else if (val > 33) idx = 1;
+
+        llmText.style.opacity = '0';
+        setTimeout(() => {
+            llmText.textContent   = llmResponses[idx].text;
+            llmMode.textContent   = llmResponses[idx].mode;
+            llmMode.style.color   = llmResponses[idx].color;
+            llmText.style.opacity = '1';
+        }, 200);
+    });
+}
+
+// =========================================
+// MAGNETIC BUTTONS — Hero CTAs
+// =========================================
+document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width  / 2;
+        const y = e.clientY - rect.top  - rect.height / 2;
+        btn.style.transition = 'none';
+        btn.style.transform  = `translate(${x * 0.35}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+        btn.style.transform  = 'translate(0px, 0px)';
+    });
+});
+
+// =========================================
+// PARTICLE BURST — Theme Toggle
+// =========================================
+(function () {
+    const canvas  = document.getElementById('particle-burst');
+    if (!canvas) return;
+    const ctx     = canvas.getContext('2d');
+    let particles = [];
+    let raf       = null;
+
+    function resize() {
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function burst(x, y) {
+        const colors = ['#8a2be2', '#b19eef', '#5227ff', '#e05fc4', '#ffffff'];
+        for (let i = 0; i < 60; i++) {
+            const angle  = Math.random() * Math.PI * 2;
+            const speed  = 2 + Math.random() * 6;
+            particles.push({
+                x, y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                r:  3 + Math.random() * 4,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: 1,
+                decay: 0.015 + Math.random() * 0.02
+            });
+        }
+        if (!raf) animate();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = particles.filter(p => p.alpha > 0);
+        particles.forEach(p => {
+            p.x     += p.vx;
+            p.y     += p.vy;
+            p.vy    += 0.15; // gravity
+            p.alpha -= p.decay;
+            ctx.globalAlpha = Math.max(0, p.alpha);
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+        if (particles.length > 0) {
+            raf = requestAnimationFrame(animate);
+        } else {
+            raf = null;
+        }
+    }
+
+    // Hook into the toggleDark function
+    const origToggleDark = window.toggleDark;
+    window.toggleDark = function () {
+        const btn  = document.getElementById('theme-toggle');
+        if (btn) {
+            const rect = btn.getBoundingClientRect();
+            burst(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        }
+        if (origToggleDark) origToggleDark();
+    };
+})();
+
