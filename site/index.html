@@ -13,7 +13,8 @@
 
 <body class="dark">
     <!-- Particle burst canvas for theme toggle -->
-    <canvas id="particle-burst" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;"></canvas>
+    <canvas id="particle-burst"
+        style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;"></canvas>
     <div id="scroll-progress"></div>
     <div class="ambient-glow"></div>
     <div id="bg-canvas"></div>
@@ -38,20 +39,23 @@
 
     <div class="hero" id="home">
         <div id="cubes-container"></div>
-        
+
 
 
         <h1><span id="typing-text" class="text-type"></span></h1>
-        
+
         <p style="max-width: 600px; line-height: 1.6; margin: 0; text-align: left;">
             I build fast, scalable full-stack web applications using React and Node.js from idea to deployment.
         </p>
 
-        <div class="hero-actions" style="margin-top: 35px; display:flex; gap:15px; justify-content:flex-start; position:relative; z-index:2;">
-            <a href="CV/Freelance_Resume.html?print=true" target="_blank" class="download-btn magnetic-btn" style="padding: 12px 24px; background: rgba(138,43,226, 0.8); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; display:inline-flex; align-items:center; gap:8px;">
+        <div class="hero-actions"
+            style="margin-top: 35px; display:flex; gap:15px; justify-content:flex-start; position:relative; z-index:2;">
+            <a href="CV/Freelance_Resume.html?print=true" target="_blank" class="download-btn magnetic-btn"
+                style="padding: 12px 24px; background: rgba(138,43,226, 0.8); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; display:inline-flex; align-items:center; gap:8px;">
                 <i class="fas fa-file-download"></i> Download Resume
             </a>
-            <a href="contact.html" class="contact-btn magnetic-btn" style="padding: 12px 24px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+            <a href="contact.html" class="contact-btn magnetic-btn"
+                style="padding: 12px 24px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
                 Let's Talk
             </a>
         </div>
@@ -59,21 +63,25 @@
 
     <section id="services" style="margin-top: 60px;">
         <h2>Services</h2>
-        <div class="services-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top:40px;">
+        <div class="services-grid"
+            style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top:40px;">
             <div class="service-card card" style="text-align: left; padding: 30px;">
                 <i class="fas fa-layer-group" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
                 <h3 style="margin-bottom:10px; font-size:1.3rem;">Custom Web Applications</h3>
-                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Building complete, end-to-end web apps from intuitive frontend UIs to robust backend systems.</p>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Building complete, end-to-end web
+                    apps from intuitive frontend UIs to robust backend systems.</p>
             </div>
             <div class="service-card card" style="text-align: left; padding: 30px;">
                 <i class="fas fa-server" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
                 <h3 style="margin-bottom:10px; font-size:1.3rem;">REST API Development</h3>
-                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Designing and building clean, secure, and scalable Node.js/Express APIs for any platform.</p>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Designing and building clean,
+                    secure, and scalable Node.js/Express APIs for any platform.</p>
             </div>
             <div class="service-card card" style="text-align: left; padding: 30px;">
                 <i class="fas fa-desktop" style="font-size:2rem; color: #8a2be2; margin-bottom:20px;"></i>
                 <h3 style="margin-bottom:10px; font-size:1.3rem;">UI Development</h3>
-                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Crafting highly engaging, React-based animated interfaces that scale flawlessly across all devices.</p>
+                <p style="color:var(--muted); font-size: 0.95rem; line-height: 1.6;">Crafting highly engaging,
+                    React-based animated interfaces that scale flawlessly across all devices.</p>
             </div>
         </div>
     </section>
@@ -85,21 +93,25 @@
                 <i class="fas fa-award" style="font-size:2rem; color: #8a2be2;"></i>
                 <div>
                     <h3 style="margin:0 0 4px 0; font-size: 1.2rem;">Published Researcher — ACL 2025, Vienna</h3>
-                    <p style="margin:0; color:var(--muted); font-size:0.9rem;">Emotional Intelligence Simulation in Large Language Models</p>
+                    <p style="margin:0; color:var(--muted); font-size:0.9rem;">Emotional Intelligence Simulation in
+                        Large Language Models</p>
                 </div>
-                <a href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank" rel="noopener noreferrer" class="research-link">Read Paper <i class="fas fa-arrow-up-right-from-square"></i></a>
+                <a href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank" rel="noopener noreferrer"
+                    class="research-link">Read Paper <i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="research-demo">
                 <p class="demo-label">See the difference: drag the slider to shift the AI's response mode</p>
                 <div class="llm-slider-wrapper">
                     <span class="slider-pole analytical"><i class="fas fa-brain"></i> Analytical</span>
-                    <input type="range" id="llm-slider" min="0" max="100" value="0" class="llm-slider" aria-label="LLM response mode: slide from Analytical to Emotional">
+                    <input type="range" id="llm-slider" min="0" max="100" value="0" class="llm-slider"
+                        aria-label="LLM response mode: slide from Analytical to Emotional">
                     <span class="slider-pole emotional"><i class="fas fa-heart"></i> Emotional</span>
                 </div>
                 <div class="llm-response-box">
                     <div class="llm-bubble" id="llm-output">
                         <span class="llm-mode-label" id="llm-mode">Analytical Mode</span>
-                        <p id="llm-text">The probability of project success correlates with a structured timeline, defined KPIs, and iterative sprint reviews. Risk mitigation is essential.</p>
+                        <p id="llm-text">The probability of project success correlates with a structured timeline,
+                            defined KPIs, and iterative sprint reviews. Risk mitigation is essential.</p>
                     </div>
                 </div>
             </div>
@@ -116,84 +128,128 @@
     </section>
 
     <section id="projects">
-        <h2>Selected Projects</h2>
+        <h2>Projects</h2>
 
         <div class="project-filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="ai">AI / ML</button>
-            <button class="filter-btn" data-filter="sys">Systems & C/C++</button>
+            <button class="filter-btn" data-filter="sys">Systems &amp; Security</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
         </div>
 
         <div class="projects-grid">
-            <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+            <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank"
+                rel="noopener noreferrer" class="card-link project-card-link">
                 <div class="card project-card" data-category="ai">
                     <div class="browser-mockup">
-                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">github.com / AI-Agent-Supervisor</div></div>
+                        <div class="browser-bar"><span></span><span></span><span></span>
+                            <div class="browser-url">github.com / AI-Agent-Supervisor</div>
+                        </div>
                         <div class="browser-screen ai-screen">
-                            <div class="mock-line w80"></div><div class="mock-line w60"></div>
-                            <div class="mock-nodes"><div class="mock-node purple"></div><div class="mock-edge"></div><div class="mock-node blue"></div><div class="mock-edge"></div><div class="mock-node purple"></div></div>
+                            <div class="mock-line w80"></div>
+                            <div class="mock-line w60"></div>
+                            <div class="mock-nodes">
+                                <div class="mock-node purple"></div>
+                                <div class="mock-edge"></div>
+                                <div class="mock-node blue"></div>
+                                <div class="mock-edge"></div>
+                                <div class="mock-node purple"></div>
+                            </div>
                             <div class="mock-line w40"></div>
                         </div>
                     </div>
                     <div class="project-card-body">
                         <div class="project-tag">AI / ML</div>
                         <h3>Generative AI Agent Supervisor</h3>
-                        <p>Advanced LangChain & LangGraph patterns for multi-agent orchestration with dynamic coordination.</p>
+                        <p>Advanced LangChain & LangGraph patterns for multi-agent orchestration with dynamic
+                            coordination.</p>
                         <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+            <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer"
+                class="card-link project-card-link">
                 <div class="card project-card" data-category="sys">
                     <div class="browser-mockup">
-                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">github.com / AI-SecGrid</div></div>
+                        <div class="browser-bar"><span></span><span></span><span></span>
+                            <div class="browser-url">github.com / AI-SecGrid</div>
+                        </div>
                         <div class="browser-screen sec-screen">
                             <div class="mock-grid">
-                                <div class="mock-stat red"><div class="mock-line w60"></div><div class="mock-big-num">42</div></div>
-                                <div class="mock-stat green"><div class="mock-line w60"></div><div class="mock-big-num">✓</div></div>
-                                <div class="mock-stat amber"><div class="mock-line w60"></div><div class="mock-big-num">!</div></div>
+                                <div class="mock-stat red">
+                                    <div class="mock-line w60"></div>
+                                    <div class="mock-big-num">42</div>
+                                </div>
+                                <div class="mock-stat green">
+                                    <div class="mock-line w60"></div>
+                                    <div class="mock-big-num">✓</div>
+                                </div>
+                                <div class="mock-stat amber">
+                                    <div class="mock-line w60"></div>
+                                    <div class="mock-big-num">!</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="project-card-body">
                         <div class="project-tag sys">Systems</div>
                         <h3>AI-SecGrid</h3>
-                        <p>React cybersecurity simulation dashboard for analyzing and responding to system intrusions.</p>
+                        <p>React cybersecurity simulation dashboard for analyzing and responding to system intrusions.
+                        </p>
                         <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+            <a href="https://github.com/RishitKapoorIT/VizGraph" target="_blank" rel="noopener noreferrer"
+                class="card-link project-card-link">
                 <div class="card project-card" data-category="all">
                     <div class="browser-mockup">
-                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">github.com / VizGraph</div></div>
+                        <div class="browser-bar"><span></span><span></span><span></span>
+                            <div class="browser-url">github.com / VizGraph</div>
+                        </div>
                         <div class="browser-screen viz-screen">
                             <svg viewBox="0 0 200 80" style="width:100%;height:100%;">
-                                <polyline points="10,70 50,40 90,55 130,20 170,35 190,15" fill="none" stroke="#8a2be2" stroke-width="2"/>
-                                <circle cx="10" cy="70" r="4" fill="#8a2be2"/><circle cx="50" cy="40" r="4" fill="#8a2be2"/>
-                                <circle cx="90" cy="55" r="4" fill="#b19eef"/><circle cx="130" cy="20" r="4" fill="#8a2be2"/>
-                                <circle cx="170" cy="35" r="4" fill="#b19eef"/><circle cx="190" cy="15" r="4" fill="#8a2be2"/>
+                                <polyline points="10,70 50,40 90,55 130,20 170,35 190,15" fill="none" stroke="#8a2be2"
+                                    stroke-width="2" />
+                                <circle cx="10" cy="70" r="4" fill="#8a2be2" />
+                                <circle cx="50" cy="40" r="4" fill="#8a2be2" />
+                                <circle cx="90" cy="55" r="4" fill="#b19eef" />
+                                <circle cx="130" cy="20" r="4" fill="#8a2be2" />
+                                <circle cx="170" cy="35" r="4" fill="#b19eef" />
+                                <circle cx="190" cy="15" r="4" fill="#8a2be2" />
                             </svg>
                         </div>
                     </div>
                     <div class="project-card-body">
                         <div class="project-tag">JS / Canvas</div>
                         <h3>VizGraph</h3>
-                        <p>JavaScript data visualization with interactive graph rendering and front-end node dynamics.</p>
+                        <p>JavaScript data visualization with interactive graph rendering and front-end node dynamics.
+                        </p>
                         <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+            <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer"
+                class="card-link project-card-link">
                 <div class="card project-card" data-category="all">
                     <div class="browser-mockup">
-                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">github.com / Blogify</div></div>
+                        <div class="browser-bar"><span></span><span></span><span></span>
+                            <div class="browser-url">github.com / Blogify</div>
+                        </div>
                         <div class="browser-screen blog-screen">
-                            <div class="mock-post"><div class="mock-line w80"></div><div class="mock-line w100"></div><div class="mock-line w60"></div></div>
-                            <div class="mock-post"><div class="mock-line w70"></div><div class="mock-line w100"></div><div class="mock-line w50"></div></div>
+                            <div class="mock-post">
+                                <div class="mock-line w80"></div>
+                                <div class="mock-line w100"></div>
+                                <div class="mock-line w60"></div>
+                            </div>
+                            <div class="mock-post">
+                                <div class="mock-line w70"></div>
+                                <div class="mock-line w100"></div>
+                                <div class="mock-line w50"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="project-card-body">
@@ -201,6 +257,67 @@
                         <h3>Blogify</h3>
                         <p>Full-stack JavaScript blogging platform with a complete content management system.</p>
                         <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/RishitKapoorIT/Fitness-APP" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+                <div class="card project-card" data-category="ai">
+                    <div class="browser-mockup">
+                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">fitness-app-seven-kohl.vercel.app</div></div>
+                        <div class="browser-screen" style="background:rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:space-around;padding:15px;gap:10px;">
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#28c840,#1a8a2e);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">💪</div><div class="mock-line w60" style="margin:0;"></div></div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#8a2be2,#5227ff);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div><div class="mock-line w60" style="margin:0;"></div></div>
+                            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#febc2e,#c47b00);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">📊</div><div class="mock-line w60" style="margin:0;"></div></div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-tag">AI / Health</div>
+                        <h3>Fitness APP</h3>
+                        <p>AI fitness coach tracking daily health metrics, logging recovery scores, and generating adaptive workout schedules based on pain and injury signals.</p>
+                        <span class="project-cta">View Live <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/RishitKapoorIT/smart-timetable-system" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+                <div class="card project-card" data-category="web">
+                    <div class="browser-mockup">
+                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">smart-timetable-system</div></div>
+                        <div class="browser-screen" style="background:rgba(0,0,0,0.15);padding:12px;">
+                            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;height:100%;">
+                                <div style="background:rgba(138,43,226,0.3);border-radius:3px;padding:4px;"><div class="mock-line w80"></div><div class="mock-line w60"></div></div>
+                                <div style="background:rgba(82,39,255,0.2);border-radius:3px;padding:4px;"><div class="mock-line w70"></div><div class="mock-line w50"></div></div>
+                                <div style="background:rgba(138,43,226,0.15);border-radius:3px;padding:4px;"><div class="mock-line w80"></div><div class="mock-line w40"></div></div>
+                                <div style="background:rgba(82,39,255,0.3);border-radius:3px;padding:4px;"><div class="mock-line w60"></div><div class="mock-line w70"></div></div>
+                                <div style="background:rgba(138,43,226,0.2);border-radius:3px;padding:4px;"><div class="mock-line w50"></div><div class="mock-line w80"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-tag" style="color:#28c840;background:rgba(40,200,64,0.1);border-color:rgba(40,200,64,0.2);">SIH 2025</div>
+                        <h3>Smart Timetable System</h3>
+                        <p>AI-powered intelligent timetable generation for universities. Built for Smart India Hackathon 2025 with conflict detection and constraint satisfaction.</p>
+                        <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://cn-survival-kit.vercel.app" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+                <div class="card project-card" data-category="web">
+                    <div class="browser-mockup">
+                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">cn-survival-kit.vercel.app</div></div>
+                        <div class="browser-screen" style="background:rgba(0,0,0,0.15);padding:15px;display:flex;flex-direction:column;justify-content:center;gap:8px;">
+                            <div style="display:flex;gap:8px;align-items:center;"><div style="width:20px;height:20px;border-radius:4px;background:#8a2be2;flex-shrink:0;"></div><div class="mock-line w70" style="margin:0;"></div></div>
+                            <div style="display:flex;gap:8px;align-items:center;"><div style="width:20px;height:20px;border-radius:4px;background:#5227ff;flex-shrink:0;"></div><div class="mock-line w50" style="margin:0;"></div></div>
+                            <div style="display:flex;gap:8px;align-items:center;"><div style="width:20px;height:20px;border-radius:4px;background:#b19eef;flex-shrink:0;"></div><div class="mock-line w80" style="margin:0;"></div></div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-tag" style="color:#febc2e;background:rgba(254,188,46,0.1);border-color:rgba(254,188,46,0.2);">Study Tool</div>
+                        <h3>CN Survival Kit</h3>
+                        <p>Computer Networks study companion — a live web app helping students ace CN exams and labs with structured notes, diagrams and quick references.</p>
+                        <span class="project-cta">View Live <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
             </a>
@@ -222,8 +339,11 @@
                     </div>
                     <h3>Research Assistant</h3>
                     <p class="timeline-org">Manipal University Jaipur</p>
-                    <p>Published work on emotional intelligence simulation in LLMs. Accepted and presented at <a href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank" rel="noopener noreferrer" style="color:#8a2be2;">ACL 2025, Vienna</a>.</p>
-                    <div class="timeline-tags"><span>NLP</span><span>LLMs</span><span>Python</span><span>Research</span></div>
+                    <p>Published work on emotional intelligence simulation in LLMs. Accepted and presented at <a
+                            href="https://aclanthology.org/2025.analogyangle-1.7/" target="_blank"
+                            rel="noopener noreferrer" style="color:#8a2be2;">ACL 2025, Vienna</a>.</p>
+                    <div class="timeline-tags"><span>NLP</span><span>LLMs</span><span>Python</span><span>Research</span>
+                    </div>
                 </div>
             </div>
 
@@ -236,8 +356,10 @@
                     </div>
                     <h3>Web Developer Intern</h3>
                     <p class="timeline-org">Zidio Development</p>
-                    <p>Built scalable web applications, designed REST APIs, handled performance optimization and cloud deployment pipelines.</p>
-                    <div class="timeline-tags"><span>React</span><span>Node.js</span><span>APIs</span><span>Deployment</span></div>
+                    <p>Built scalable web applications, designed REST APIs, handled performance optimization and cloud
+                        deployment pipelines.</p>
+                    <div class="timeline-tags">
+                        <span>React</span><span>Node.js</span><span>APIs</span><span>Deployment</span></div>
                 </div>
             </div>
 
