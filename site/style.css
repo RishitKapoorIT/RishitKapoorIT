@@ -632,7 +632,6 @@ footer {
 body.dark .filter-btn {
     border: 1px solid rgba(255, 255, 255, 0.06);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    /* Inner top edge */
 }
 
 .filter-btn:hover,
@@ -646,12 +645,6 @@ body.dark .filter-btn {
 
 .card.hidden-project {
     display: none;
-}
-
-.projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 /* --- SCROLL SPY NAVIGATION --- */
@@ -1596,4 +1589,323 @@ body.dark .submit-btn:hover {
     color: var(--text);
     transition: opacity 0.3s ease;
     margin: 0;
-}
+}
+
+/* ================================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS
+   Breakpoint: <= 768px (phones)
+   Breakpoint: <= 480px (small phones)
+   ================================================ */
+
+@media (max-width: 768px) {
+
+    /* ---- NAV ---- */
+    nav {
+        padding: 15px 5%;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+        padding: 0 5%;
+        padding-top: 90px;
+        height: auto;
+        min-height: 100svh;
+        justify-content: center;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+        max-width: 100%;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+    .hero p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .hero-actions {
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+    .hero-actions a {
+        width: 100%;
+        justify-content: center !important;
+        text-align: center;
+    }
+
+    /* Hide the 3D cubes animation on mobile — saves perf + prevents overlap */
+    #cubes-container {
+        display: none;
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+        padding: 70px 5% !important;
+    }
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 28px;
+    }
+
+    /* ---- SERVICES GRID ---- */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    /* ---- PROJECT FILTERS ---- */
+    .project-filters {
+        gap: 8px;
+        justify-content: flex-start;
+    }
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 6px 14px;
+    }
+
+    /* ---- PROJECT CARDS GRID ---- */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    .project-card {
+        transform: none !important;
+    }
+    .browser-screen {
+        height: 100px;
+    }
+    .browser-url {
+        font-size: 0.6rem;
+        max-width: 140px;
+    }
+    .project-card-body {
+        padding: 14px 16px 18px;
+    }
+    .project-card-body h3 {
+        font-size: 1rem;
+    }
+    .project-card-body p {
+        font-size: 0.85rem;
+    }
+    /* Mockup node sizes */
+    .mock-node {
+        width: 16px;
+        height: 16px;
+    }
+    .mock-big-num {
+        font-size: 1rem;
+    }
+
+    /* ---- TIMELINE (Experience) ---- */
+    .timeline {
+        padding-left: 35px;
+        gap: 28px;
+    }
+    .timeline-dot {
+        left: -29px;
+        width: 22px;
+        height: 22px;
+        font-size: 0.6rem;
+    }
+    .timeline-line {
+        left: 8px;
+    }
+    .timeline-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .timeline-content.card {
+        padding: 18px;
+    }
+    .timeline-tags {
+        gap: 6px;
+    }
+
+    /* ---- RESEARCH SPOTLIGHT (LLM Slider) ---- */
+    .research-spotlight {
+        padding: 20px !important;
+    }
+    .research-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+    .research-link {
+        width: 100%;
+        justify-content: center;
+    }
+    .llm-slider-wrapper {
+        gap: 10px;
+    }
+    .slider-pole {
+        font-size: 0.7rem;
+    }
+    .llm-slider-wrapper .slider-pole span {
+        display: none; /* hide text labels, keep icons */
+    }
+
+    /* ---- SKILLS ---- */
+    .skills {
+        gap: 8px;
+    }
+    .skills a {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    /* ---- SPOTIFY WIDGET ---- */
+    .spotify-widget {
+        bottom: 14px;
+        left: 14px;
+        transform: scale(0.88);
+        transform-origin: bottom left;
+    }
+    .spotify-panel {
+        left: 10px;
+        bottom: 70px;
+        width: calc(100vw - 20px);
+    }
+
+    /* ---- CONTACT SECTION (index) ---- */
+    .contact {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .contact a {
+        font-size: 1.6rem;
+    }
+
+    /* ---- CONTACT PAGE ---- */
+    .contact-page-wrapper {
+        padding: 110px 5% 60px !important;
+    }
+    .big-title {
+        font-size: 2.8rem !important;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px;
+    }
+    .contact-left h2 {
+        font-size: 1.5rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        font-size: 0.95rem;
+    }
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer-bottom {
+        padding: 30px 5%;
+        gap: 14px;
+        text-align: center;
+    }
+    footer {
+        padding: 28px 5%;
+    }
+
+    /* ---- SCROLL DOTS — already hidden, just confirm ---- */
+    .scroll-nav {
+        display: none;
+    }
+
+    /* ---- MAGNETIC BUTTONS — disable physics on touch ---- */
+    .magnetic-btn {
+        transform: none !important;
+        transition: background 0.3s ease, box-shadow 0.3s ease !important;
+    }
+}
+
+/* ---- PROJECTS.HTML — convert horizontal scroll to vertical on mobile ---- */
+@media (max-width: 768px) {
+    .pin-container {
+        height: auto !important;
+        overflow: visible !important;
+        align-items: flex-start;
+    }
+    .horizontal-scroll-wrapper {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 24px !important;
+        padding: 0 5% !important;
+        transform: none !important; /* override GSAP */
+    }
+    .project-detail-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex-shrink: unset;
+    }
+    .project-split {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+    .project-visual {
+        height: 220px;
+    }
+    .card-swap-container {
+        transform: translate(-50%, -20%) !important;
+    }
+    .swap-card {
+        width: 220px !important;
+        height: 150px !important;
+        padding: 16px !important;
+    }
+    .swap-card h3 {
+        font-size: 1rem !important;
+    }
+    .swap-card p {
+        font-size: 0.8rem !important;
+    }
+    .project-detail-header h2 {
+        font-size: 1.5rem !important;
+    }
+    .repo-link {
+        font-size: 0.8rem !important;
+        padding: 7px 14px !important;
+    }
+    .page-title {
+        font-size: 2.2rem !important;
+        margin-top: 80px !important;
+    }
+}
+
+/* ---- VERY SMALL PHONES (< 400px) ---- */
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .big-title {
+        font-size: 2.2rem !important;
+    }
+    .project-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .repo-link {
+        width: 100%;
+        justify-content: center;
+    }
+    .swap-card {
+        width: 180px !important;
+        height: 130px !important;
+    }
+    .research-spotlight {
+        padding: 16px !important;
+    }
+    .llm-response-box {
+        padding: 14px;
+    }
+    #llm-text {
+        font-size: 0.85rem;
+    }
+}
+

@@ -637,13 +637,19 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
 
+            // On mobile, skip GSAP horizontal scroll entirely — CSS handles vertical layout
+            const isMobile = window.innerWidth <= 768;
+
             gsap.registerPlugin(ScrollTrigger);
 
             const horizontalWrapper = document.querySelector('.horizontal-scroll-wrapper');
             const sections = gsap.utils.toArray('.project-detail-card');
 
+            let horizontalScrollTween = null;
+
+            if (!isMobile) {
             // 1. Master Horizontal Scroll Pin (Using actual ScrollWidth bounds)
-            const horizontalScrollTween = gsap.to(horizontalWrapper, {
+            horizontalScrollTween = gsap.to(horizontalWrapper, {
                 x: () => -(horizontalWrapper.scrollWidth - window.innerWidth),
                 ease: "none",
                 scrollTrigger: {
@@ -654,6 +660,7 @@
                     invalidateOnRefresh: true
                 }
             });
+            } // end !isMobile
 
             // 2. Vanilla JS GSAP Card Swap Implementation
             function initCardSwap(containerNode, settings = {}) {
@@ -703,11 +710,12 @@
                 if (typeof ScrollTrigger !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
                 // Initialize positions with ScrollTrigger Cinematic Reveal linked to Horizontal scrub
-                const entranceTl = gsap.timeline({
+                const entranceTl = gsap.timeline(
+                    isMobile ? {} : {
                     scrollTrigger: {
-                        trigger: containerNode.closest('.project-detail-card'), // Trigger off the parent card entering
-                        containerAnimation: horizontalScrollTween, // Bind to the master horizontal tween!
-                        start: "left 75%", // Triggers when the card's left edge hits 75% of the viewport width
+                        trigger: containerNode.closest('.project-detail-card'),
+                        containerAnimation: horizontalScrollTween,
+                        start: "left 75%",
                     }
                 });
 
