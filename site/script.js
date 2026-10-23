@@ -1,14 +1,58 @@
-/* DARK MODE TOGGLE */
-function toggleDark() {
-    document.body.classList.toggle("dark");
+/* CLEAN URLS HANDLER: Automatically clean .html and /index.html from the URL bar */
+(function cleanUrlBar() {
+    try {
+        if (window.location.protocol === 'file:') return;
+        const pathname = window.location.pathname;
+        if (pathname.endsWith('/index.html')) {
+            const clean = pathname.replace(/\/index\.html$/, '/') || '/';
+            window.history.replaceState(null, '', clean + window.location.search + window.location.hash);
+        } else if (pathname.endsWith('.html')) {
+            const clean = pathname.replace(/\.html$/, '');
+            window.history.replaceState(null, '', clean + window.location.search + window.location.hash);
+        }
+    } catch (e) {}
+})();
+
+/* DARK MODE PERSISTENCE */
+function getSavedTheme() {
+    return localStorage.getItem("theme") || "dark";
+}
+
+function updateThemeUI(isDark) {
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
-        if (document.body.classList.contains("dark")) {
-            themeBtn.innerText = "Light Mode";
-        } else {
-            themeBtn.innerText = "Dark Mode";
+        themeBtn.innerText = isDark ? "Light Mode" : "Dark Mode";
+    }
+}
+
+function applyTheme(theme) {
+    const isDark = theme !== "light";
+    if (isDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+        if (document.body) {
+            document.body.classList.add("dark");
+            document.body.classList.remove("light");
+        }
+    } else {
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.add("light");
+        if (document.body) {
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
         }
     }
+    updateThemeUI(isDark);
+}
+
+// Immediately apply saved theme on script evaluation
+applyTheme(getSavedTheme());
+
+function toggleDark() {
+    const currentlyDark = document.body ? document.body.classList.contains("dark") : (getSavedTheme() === "dark");
+    const nextTheme = currentlyDark ? "light" : "dark";
+    localStorage.setItem("theme", nextTheme);
+    applyTheme(nextTheme);
 }
 
 /* MOBILE MENU TOGGLE */

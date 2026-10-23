@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rishit Kapoor</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css?v=3">
+    <!-- Immediate Theme Anti-Flash Script -->
+    <script>
+        (function() {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.classList.add('light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5379888502714819"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="dark">
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.body.classList.remove('dark');
+            document.body.classList.add('light');
+        }
+    </script>
+    <canvas id="particle-burst" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;"></canvas>
+    <div id="scroll-progress"></div>
+    <div class="ambient-glow"></div>
+    <div id="bg-canvas"></div>
+
+    <nav>
+        <div class="logo"><strong><a href="/" style="text-decoration: none; color: inherit;">Rishit
+                    Kapoor</a></strong></div>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links" id="nav-links">
+            <a href="/#about" onclick="toggleMenu()">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/#experience" onclick="toggleMenu()">Experience</a>
+            <a href="/contact/">Contact</a>
+            <button class="toggle-btn" onclick="toggleDark()" id="theme-toggle">Light Mode</button>
+        </div>
+    </nav>
+
+    <main class="contact-page-wrapper">
+        <div class="contact-header">
+            <span class="small-title">Get in touch</span>
+            <h1 class="big-title">LET'S TALK</h1>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-left">
+                <h2>Have a project in mind? Let's build it.</h2>
+                <p>If you're looking for a fast, scalable web application or need help bringing an idea to life, I am available for freelance work.</p>
+                <p><strong>Response Time:</strong> I typically respond to all project inquiries within 24 hours.</p>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm">
+                    <!-- Web3Forms Access Key (Replace below with your actual key) -->
+                    <input type="hidden" name="access_key" value="b5799947-3065-4efb-be6c-2fc6457fa551">
+                    <div class="form-group">
+                        <label for="name">NAME (*)</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-MAIL (*)</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">WEBSITE</label>
+                        <input type="url" id="website" name="website" placeholder="Add a URI with http://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsup">WHAT'S UP? (*)</label>
+                        <div class="custom-select-wrapper">
+                            <select id="whatsup" name="whatsup" required>
+                                <option value="" disabled selected>-- Select an option --</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="freelance">Freelance Project</option>
+                                <option value="job">Job Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">COMMENT (*)</label>
+                        <textarea id="comment" name="comment" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I have read and accepted the Terms and Conditions and Privacy Policy.</label>
+                    </div>
+
+                    <div class="recaptcha-text">
+                        This site is protected by reCAPTCHA and the standard Google Privacy Policy and Terms of Service apply.
+                    </div>
+
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            © 2026 Rishit Kapoor. Built with intention.
+            <div class="footer-social">
+                <span>Connect:</span>
+                <a href="https://github.com/RishitKapoorIT" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/rishit-kapoor-33b2b81b0" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/rishitkapoor_28/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+            <button class="back-to-top" onclick="window.scrollTo(0,0)" aria-label="Back to top" title="Back to top"><i
+                    class="fas fa-arrow-up"></i></button>
+        </div>
+    </footer>
+
+    <!-- Three.js for Background Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+    <!-- GSAP for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="/script.js?v=2"></script>
+
+    <!-- Web3Forms AJAX Submission Script -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = form.querySelector('.submit-btn');
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'SENDING...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => { object[key] = value });
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (response.status === 200) {
+                    alert('Success! Your message has been sent to Rishit.');
+                    form.reset();
+                } else {
+                    alert('Oops! Something went wrong: ' + (result.message || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error(error);
+                alert('Oops! Something went wrong while sending the message.');
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
