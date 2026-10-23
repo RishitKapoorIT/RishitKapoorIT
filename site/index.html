@@ -69,8 +69,8 @@
 
         <h1><span id="typing-text" class="text-type"></span></h1>
 
-        <p style="max-width: 600px; line-height: 1.6; margin: 0; text-align: left;">
-            I build fast, scalable full-stack web applications using React and Node.js from idea to deployment.
+        <p style="max-width: 640px; line-height: 1.7; margin: 0; text-align: left; font-size: 1.1rem; color: var(--muted);">
+            Architecting intelligent web platforms and autonomous AI systems — bridging robust backend engineering with fluid, responsive user interfaces.
         </p>
 
         <div class="hero-actions"
@@ -145,11 +145,14 @@
 
     <section id="about">
         <h2>About</h2>
-        <p>
-            Third-year IT student focused on Cybersecurity, AI systems, and scalable web applications.
-            Research presented at ACL 2025 (Vienna). Builder of intelligent multi-agent systems and full-stack
-            platforms.
-        </p>
+        <div class="card" style="padding: 35px; text-align: left;">
+            <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text); margin-top: 0;">
+                I'm a Computer Science &amp; IT engineer at <strong>Manipal University Jaipur</strong> specializing in <strong>Autonomous AI Agents</strong>, <strong>Cybersecurity</strong>, and <strong>Full-Stack Architecture</strong>.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--muted); margin-top: 15px; margin-bottom: 0;">
+                My research on emotional intelligence simulation in Large Language Models was accepted and presented at <strong>ACL 2025 in Vienna</strong>. Beyond research, I build production-grade web systems — from Smart India Hackathon (SIH 2025) platforms to maritime AI copilots and adaptive health applications.
+            </p>
+        </div>
     </section>
 
     <section id="projects">
@@ -163,6 +166,37 @@
         </div>
 
         <div class="projects-grid">
+            <!-- Project: MIRA (Marine Intelligence & Reasoning Agent) -->
+            <a href="https://mira-ai-gamma.vercel.app" target="_blank" rel="noopener noreferrer"
+                class="card-link project-card-link">
+                <div class="card project-card" data-category="ai">
+                    <div class="browser-mockup">
+                        <div class="browser-bar"><span></span><span></span><span></span>
+                            <div class="browser-url">mira-ai-gamma.vercel.app</div>
+                        </div>
+                        <div class="browser-screen" style="background:rgba(0,0,0,0.18);display:flex;flex-direction:column;justify-content:center;padding:14px;gap:8px;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#00b4d8,#0077b6);display:flex;align-items:center;justify-content:center;font-size:0.8rem;">🌊</div>
+                                    <span style="font-size:0.75rem;font-weight:600;color:#00b4d8;letter-spacing:0.05em;">ORCA // MIRA</span>
+                                </div>
+                                <span style="font-size:0.7rem;padding:2px 8px;border-radius:10px;background:rgba(0,180,216,0.15);color:#00b4d8;">LIVE</span>
+                            </div>
+                            <div class="mock-line w80" style="margin:0;background:rgba(0,180,216,0.4);"></div>
+                            <div style="display:flex;gap:6px;margin-top:4px;">
+                                <div style="flex:1;height:28px;background:rgba(0,119,182,0.25);border-radius:4px;border:1px solid rgba(0,180,216,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#b19eef;">Coastal AI</div>
+                                <div style="flex:1;height:28px;background:rgba(138,43,226,0.25);border-radius:4px;border:1px solid rgba(138,43,226,0.3);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#00b4d8;">Maritime</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-tag" style="color:#00b4d8;background:rgba(0,180,216,0.1);border-color:rgba(0,180,216,0.2);">AI / Maritime</div>
+                        <h3>MIRA (Marine Intelligence Agent)</h3>
+                        <p>AI-powered coastal decision platform providing intelligent navigational reasoning & telemetry across India's coastline.</p>
+                        <span class="project-cta">View Live <i class="fas fa-external-link-alt"></i></span>
+                    </div>
+                </div>
+            </a>
             <a href="https://github.com/RishitKapoorIT/AI-Agent-Supervisor-Project" target="_blank"
                 rel="noopener noreferrer" class="card-link project-card-link">
                 <div class="card project-card" data-category="ai">
@@ -193,12 +227,12 @@
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/AI-SecGrid" target="_blank" rel="noopener noreferrer"
+            <a href="https://ai-sec-grid.vercel.app" target="_blank" rel="noopener noreferrer"
                 class="card-link project-card-link">
                 <div class="card project-card" data-category="sys">
                     <div class="browser-mockup">
                         <div class="browser-bar"><span></span><span></span><span></span>
-                            <div class="browser-url">github.com / AI-SecGrid</div>
+                            <div class="browser-url">ai-sec-grid.vercel.app</div>
                         </div>
                         <div class="browser-screen sec-screen">
                             <div class="mock-grid">
@@ -222,7 +256,7 @@
                         <h3>AI-SecGrid</h3>
                         <p>React cybersecurity simulation dashboard for analyzing and responding to system intrusions.
                         </p>
-                        <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                        <span class="project-cta">View Live <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </div>
             </a>
@@ -257,12 +291,12 @@
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/Blogify" target="_blank" rel="noopener noreferrer"
+            <a href="https://blogify-snowy.vercel.app" target="_blank" rel="noopener noreferrer"
                 class="card-link project-card-link">
-                <div class="card project-card" data-category="all">
+                <div class="card project-card" data-category="web">
                     <div class="browser-mockup">
                         <div class="browser-bar"><span></span><span></span><span></span>
-                            <div class="browser-url">github.com / Blogify</div>
+                            <div class="browser-url">blogify-snowy.vercel.app</div>
                         </div>
                         <div class="browser-screen blog-screen">
                             <div class="mock-post">
@@ -281,7 +315,7 @@
                         <div class="project-tag">Full-Stack</div>
                         <h3>Blogify</h3>
                         <p>Full-stack JavaScript blogging platform with a complete content management system.</p>
-                        <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                        <span class="project-cta">View Live <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </div>
             </a>
@@ -305,10 +339,10 @@
                 </div>
             </a>
 
-            <a href="https://github.com/RishitKapoorIT/smart-timetable-system" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
+            <a href="https://smart-timetable-system-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="card-link project-card-link">
                 <div class="card project-card" data-category="web">
                     <div class="browser-mockup">
-                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">smart-timetable-system</div></div>
+                        <div class="browser-bar"><span></span><span></span><span></span><div class="browser-url">smart-timetable-system-ten.vercel.app</div></div>
                         <div class="browser-screen" style="background:rgba(0,0,0,0.15);padding:12px;">
                             <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;height:100%;">
                                 <div style="background:rgba(138,43,226,0.3);border-radius:3px;padding:4px;"><div class="mock-line w80"></div><div class="mock-line w60"></div></div>
@@ -323,7 +357,7 @@
                         <div class="project-tag" style="color:#28c840;background:rgba(40,200,64,0.1);border-color:rgba(40,200,64,0.2);">SIH 2025</div>
                         <h3>Smart Timetable System</h3>
                         <p>AI-powered intelligent timetable generation for universities. Built for Smart India Hackathon 2025 with conflict detection and constraint satisfaction.</p>
-                        <span class="project-cta">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                        <span class="project-cta">View Live <i class="fas fa-external-link-alt"></i></span>
                     </div>
                 </div>
             </a>

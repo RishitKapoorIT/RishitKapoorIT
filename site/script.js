@@ -111,12 +111,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Typing Effect for Main Title
     const typingElement = document.getElementById('typing-text');
     if (typingElement) {
-        new TextType(typingElement, ["Freelance Full-Stack Developer."], {
-            typingSpeed: 50,
-            deletingSpeed: 30,
-            pauseDuration: 2000,
-            loop: false, // Disabled loop as requested
-            hideCursorOnComplete: true // Auto hide cursor when finished
+        new TextType(typingElement, [
+            "Full-Stack Engineer & AI Builder.",
+            "Published Researcher at ACL 2025.",
+            "Cybersecurity & Systems Developer."
+        ], {
+            typingSpeed: 45,
+            deletingSpeed: 25,
+            pauseDuration: 2200,
+            loop: true,
+            hideCursorOnComplete: false
         });
     }
 
